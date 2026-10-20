@@ -1,0 +1,42 @@
+# Framework core library (installed via Composer from acex/core, not committed to skeleton)
+/src/
+
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Environment & credentials
+.env
+.env.backup
+.env.production
+*.local
+
+# Application storage & runtime caches
+/storage/cache/*
+!storage/cache/.gitkeep
+/storage/views/*
+!storage/views/.gitkeep
+/storage/logs/*
+!storage/logs/.gitkeep
+/storage/framework/*
+!storage/framework/.gitkeep
+
+# Public user uploads
+/public/uploads/*
+!public/uploads/.gitkeep
+
+# Testing & code coverage
+.phpunit.result.cache
+/tests/.phpunit.cache/
+/coverage/
+
+# Local scratch & dev files
+/scratch/
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

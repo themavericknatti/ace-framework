@@ -1,0 +1,9 @@
+{
+    "site_title": "Ace App",
+    "site_description": "A modern PHP MVC Application",
+    "site_logo": "",
+    "site_favicon": "",
+    "support_email": "admin@example.com",
+    "maintenance_mode": "no",
+    "timezone": "UTC"
+}

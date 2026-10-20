@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent directory listing
+    Options -Indexes
+
+    # Block access to hidden files and sensitive project files
+    <FilesMatch "^(\.env|\.env\..*|composer\.json|composer\.lock|package\.json|package-lock\.json|ace)$">
+        Require all denied
+    </FilesMatch>
+
+    # Protect internal application directories from direct HTTP access
+    RewriteRule ^(app|config|migrations|src|storage|views|vendor)/ - [F,L,NC]
+
+    # Serve static assets and uploads directly from public/
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+    RewriteRule ^uploads/(.*)$ public/uploads/$1 [L]
+
+    # Forward all other requests to the public directory
+    RewriteCond %{REQUEST_URI} !/public/ [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Disable server signature
+ServerSignature Off
